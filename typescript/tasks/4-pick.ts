@@ -33,26 +33,25 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<Expected1, MyPick<Todo, 'title'>>>,
-  Expect<Equal<Expected2, MyPick<Todo, 'title' | 'completed'>>>,
-  // @ts-expect-error
-  MyPick<Todo, 'title' | 'completed' | 'invalid'>,
+	Expect<Equal<Expected1, MyPick<Todo, 'title'>>>,
+	Expect<Equal<Expected2, MyPick<Todo, 'title' | 'completed'>>>,
+	// @ts-expect-error
+	MyPick<Todo, 'title' | 'completed' | 'invalid'>
 ]
 
-
 interface Todo {
-  title: string
-  description: string
-  completed: boolean
+	title: string
+	description: string
+	completed: boolean
 }
 
 interface Expected1 {
-  title: string
+	title: string
 }
 
 interface Expected2 {
-  title: string
-  completed: boolean
+	title: string
+	completed: boolean
 }
 
 /* _____________ Further Steps _____________ */
@@ -62,9 +61,9 @@ interface Expected2 {
   > More Challenges: https://tsch.js.org
 */
 
-/** 
-* _____________ Your Code Here _____________
-*/
+/**
+ * _____________ Your Code Here _____________
+ */
 
 /*
 	How we can do it?

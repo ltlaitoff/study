@@ -1,20 +1,20 @@
 {
-  "name": "typescript",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+	"name": "typescript",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
 		"format:all": "prettier --log-level warn --write ."
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@type-challenges/utils": "^0.1.1",
-    "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "prettier": "^3.5.3"
-  }
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@type-challenges/utils": "^0.1.1",
+		"typescript": "^5.8.2"
+	},
+	"dependencies": {
+		"prettier": "^3.5.3"
+	}
 }

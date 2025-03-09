@@ -29,40 +29,40 @@
 */
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils";
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<Expected1, MyOmit<Todo, "description">>>,
-  Expect<Equal<Expected2, MyOmit<Todo, "description" | "completed">>>,
-  Expect<Equal<Expected3, MyOmit<Todo1, "description" | "completed">>>,
-];
+	Expect<Equal<Expected1, MyOmit<Todo, 'description'>>>,
+	Expect<Equal<Expected2, MyOmit<Todo, 'description' | 'completed'>>>,
+	Expect<Equal<Expected3, MyOmit<Todo1, 'description' | 'completed'>>>
+]
 
 // @ts-expect-error
-type error = MyOmit<Todo, "description" | "invalid">;
+type error = MyOmit<Todo, 'description' | 'invalid'>
 
 interface Todo {
-  title: string;
-  description: string;
-  completed: boolean;
+	title: string
+	description: string
+	completed: boolean
 }
 
 interface Todo1 {
-  readonly title: string;
-  description: string;
-  completed: boolean;
+	readonly title: string
+	description: string
+	completed: boolean
 }
 
 interface Expected1 {
-  title: string;
-  completed: boolean;
+	title: string
+	completed: boolean
 }
 
 interface Expected2 {
-  title: string;
+	title: string
 }
 
 interface Expected3 {
-  readonly title: string;
+	readonly title: string
 }
 
 /* _____________ Further Steps _____________ */
@@ -74,16 +74,15 @@ interface Expected3 {
 
 /* _____________ Your Code Here _____________ */
 
-type A = MyOmit<Todo, "description" | "completed">;
-type C = MyOmit<Todo1, "description" | "completed">;
-
+type A = MyOmit<Todo, 'description' | 'completed'>
+type C = MyOmit<Todo1, 'description' | 'completed'>
 
 // My
-type OmitKeys<T, K extends keyof T, U = keyof T> = U extends K ? never : U;
+type OmitKeys<T, K extends keyof T, U = keyof T> = U extends K ? never : U
 
 type MyOmit<T, K extends keyof T, X extends keyof T = OmitKeys<T, K>> = {
-  [P in X]: T[P];
-};
+	[P in X]: T[P]
+}
 
 // My after see solution
 /*

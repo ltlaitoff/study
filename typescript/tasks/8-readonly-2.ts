@@ -36,31 +36,31 @@
 import type { Alike, Expect } from '@type-challenges/utils'
 
 type cases = [
-  Expect<Alike<MyReadonly2<Todo1>, Readonly<Todo1>>>,
-  Expect<Alike<MyReadonly2<Todo1, 'title' | 'description'>, Expected>>,
-  Expect<Alike<MyReadonly2<Todo2, 'title' | 'description'>, Expected>>,
-  Expect<Alike<MyReadonly2<Todo2, 'description' >, Expected>>,
+	Expect<Alike<MyReadonly2<Todo1>, Readonly<Todo1>>>,
+	Expect<Alike<MyReadonly2<Todo1, 'title' | 'description'>, Expected>>,
+	Expect<Alike<MyReadonly2<Todo2, 'title' | 'description'>, Expected>>,
+	Expect<Alike<MyReadonly2<Todo2, 'description'>, Expected>>
 ]
 
 // @ts-expect-error
 type error = MyReadonly2<Todo1, 'title' | 'invalid'>
 
 interface Todo1 {
-  title: string
-  description?: string
-  completed: boolean
+	title: string
+	description?: string
+	completed: boolean
 }
 
 interface Todo2 {
-  readonly title: string
-  description?: string
-  completed: boolean
+	readonly title: string
+	description?: string
+	completed: boolean
 }
 
 interface Expected {
-  readonly title: string
-  readonly description?: string
-  completed: boolean
+	readonly title: string
+	readonly description?: string
+	completed: boolean
 }
 
 /* _____________ Further Steps _____________ */
@@ -77,18 +77,16 @@ type A = MyReadonly2<Todo1, 'title' | 'description'>
 // My
 type MyPick<T, K extends keyof T> = { [P in K]: T[P] }
 
-type OmitKeys<T, K extends keyof T, U = keyof T> = U extends K ? never : U;
+type OmitKeys<T, K extends keyof T, U = keyof T> = U extends K ? never : U
 
 type MyOmit<T, K extends keyof T, X extends keyof T = OmitKeys<T, K>> = {
-  [P in X]: T[P];
-};
+	[P in X]: T[P]
+}
 
 type MyReadonly<T> = { readonly [P in keyof T]: T[P] }
 
-type MyReadonly2<
-	T, 
-	K extends keyof T = keyof T
- > = MyOmit<T, K> & MyReadonly<MyPick<T, K>>
+type MyReadonly2<T, K extends keyof T = keyof T> = MyOmit<T, K> &
+	MyReadonly<MyPick<T, K>>
 
 // From answer
 /*
@@ -101,5 +99,3 @@ type MyReadonly2<T, K extends keyof T = keyof T> = {
   }
 
 */
-
-
