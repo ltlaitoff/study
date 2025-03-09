@@ -12,3 +12,5 @@ Easy:
 Medium:
 - 2 - Get Return Type
 - 3 - Omit
+- 8 - Readonly 2
+- 9 - Deep Readonly
