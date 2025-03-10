@@ -19,3 +19,5 @@ Medium:
 - 10 - Tuple to Union
 - 15 - Last of array
 - 16 - Pop
+- 12 - Chainable options
+- 62 - Type Lookup
