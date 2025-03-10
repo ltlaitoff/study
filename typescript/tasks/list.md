@@ -16,3 +16,6 @@ Medium:
 - 3 - Omit
 - 8 - Readonly 2
 - 9 - Deep Readonly
+- 10 - Tuple to Union
+- 15 - Last of array
+- 16 - Pop
