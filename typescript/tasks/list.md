@@ -21,3 +21,6 @@ Medium:
 - 16 - Pop
 - 12 - Chainable options
 - 62 - Type Lookup
+- 106 - Trim Left
+- 108 - Trim
+- 110 - Capitalize
