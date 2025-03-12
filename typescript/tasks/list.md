@@ -24,3 +24,5 @@ Medium:
 - 106 - Trim Left
 - 108 - Trim
 - 110 - Capitalize
+- 116 - Replace
+- 119 - ReplaceAll
