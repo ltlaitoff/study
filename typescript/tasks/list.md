@@ -27,3 +27,4 @@ Medium:
 - 116 - Replace
 - 119 - ReplaceAll
 - 298 - Length of String type
+- 8987 - Subsequence
