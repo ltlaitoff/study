@@ -26,3 +26,4 @@ Medium:
 - 110 - Capitalize
 - 116 - Replace
 - 119 - ReplaceAll
+- 298 - Length of String type
